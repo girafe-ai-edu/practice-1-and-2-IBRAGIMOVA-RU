@@ -1,6 +1,21 @@
 # -*- coding: utf-8 -*-
 """
-Develop a program that asks the user for an integer 4-digit number and calculates the sum of its constituent digits. For example, if the user enters the number 3141, the program should output the following result:
-3 + 1 + 4 + 1 = 9
+Разработайте программу, запрашивающую у  пользователя целое четырехзначное число и подсчитывающую сумму составляющих его цифр. Например, если пользователь введет число 3141,
+ программа должна вывести 
+следующий результат: 3 + 1 + 4 + 1 = 9
 
+@author: Savant
 """
+# Запрашиваем у пользователя четырёхзначное число
+number = input("Введите четырёхзначное число: ")
+
+# Проверяем, что введено действительно четырёхзначное число
+if len(number) == 4 and number.isdigit():
+    # Преобразуем цифры в целые числа и считаем их сумму
+    digits = [int(digit) for digit in number]
+    digit_sum = sum(digits)
+    
+    # Выводим результат с форматированием
+    print(f"{' + '.join(number)} = {digit_sum}")
+else:
+    print("Ошибка: Введите корректное четырёхзначное число!")
